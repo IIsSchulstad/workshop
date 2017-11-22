@@ -5,6 +5,8 @@
  */
 package business;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Kim Christensen
@@ -12,6 +14,7 @@ package business;
 public class TempSensor extends Sensor {
     
 public TempSensor(boolean isTurnedOn){
+    this.sensorLog = new ArrayList<>();
     this.isTurnedOn = isTurnedOn;
 }
 

@@ -15,10 +15,6 @@ public abstract class Sensor {
     protected boolean isTurnedOn;
     protected double measurement;
     protected ArrayList<Double>sensorLog;
-    
-    public void getMeasurement(){
-        //Will get the measurement
-    }
 
     /**
      * @return the isTurnedOn
@@ -32,5 +28,13 @@ public abstract class Sensor {
      */
     public void setIsTurnedOn(boolean isTurnedOn) {
         this.isTurnedOn = isTurnedOn;
+    }
+    
+    public ArrayList<Double> getLog(){
+        return sensorLog;
+    }
+    
+    public void addMeasurement(double measurement){
+        sensorLog.add(measurement);
     }
 }

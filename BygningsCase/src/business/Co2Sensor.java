@@ -5,12 +5,15 @@
  */
 package business;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Kim Christensen
  */
 public class Co2Sensor extends Sensor {
     public Co2Sensor(boolean isTurnedOn){
+        this.sensorLog = new ArrayList<>();
         this.isTurnedOn = isTurnedOn;
     }
   

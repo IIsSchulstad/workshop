@@ -5,6 +5,9 @@
  */
 package business;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  *
  * @author Kim Christensen
@@ -15,10 +18,8 @@ public class Starter {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Building building1 = new Building("SDU", "Campusvej");
-        building1.addSensor(new TempSensor(true));
-        building1.addSensor(new Co2Sensor(false));
-        System.out.println(building1.showSensors());
+        Facade facade = new Facade();
+        facade.Driver();
     }
     
 }
