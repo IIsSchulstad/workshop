@@ -79,7 +79,6 @@ public class Building {
         String s = "";
         s += name + "\n";
         s += address + "\n";
-        s += showSensors() + "\n\n";
         return s;
     }
 }

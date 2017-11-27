@@ -13,8 +13,7 @@ import java.util.ArrayList;
  */
 public abstract class Sensor {
     protected boolean isTurnedOn;
-    protected double measurement;
-    protected ArrayList<Double>sensorLog;
+    protected ArrayList<Measurement>sensorLog;
 
     /**
      * @return the isTurnedOn
@@ -30,11 +29,11 @@ public abstract class Sensor {
         this.isTurnedOn = isTurnedOn;
     }
     
-    public ArrayList<Double> getLog(){
+    public ArrayList<Measurement> getLog(){
         return sensorLog;
     }
     
-    public void addMeasurement(double measurement){
+    public void addMeasurement(Measurement measurement){
         sensorLog.add(measurement);
     }
 }

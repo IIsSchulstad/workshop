@@ -14,40 +14,33 @@ import java.util.List;
  */
 public class Facade {
 
-    List<Building> buildings;
+    private List<Building> buildings;
 
     public Facade() {
         buildings = new ArrayList<>();
-        createBuildings();
-    }
-    
-    public void Driver(){
-        buildings.get(0).getSensors().get(0).addMeasurement(678);
-        System.out.println(buildings.get(0).printSensorLog(buildings.get(0).getSensors().get(0)));
-    }
-    
-
-    public void createBuildings() {
-        Building building1 = new Building("SDU", "Campusvej");
-        building1.addSensor(new TempSensor(true));
-        building1.addSensor(new Co2Sensor(true));
-        buildings.add(building1);
     }
 
-    public void addBuilding(Building building) {
-        buildings.add(building);
+    public void addBuilding(String name, String address) {
+        getBuildings().add(new Building(name, address));
     }
 
     public void removeBuilding(int buildingIndex) {
-        buildings.remove(buildingIndex);
+        getBuildings().remove(buildingIndex);
     }
 
     public String showBuilding() {
         String s = "";
-        for (int i = 0; i < buildings.size(); i++) {
-            buildings.get(i).toString();
+        for (int i = 0; i < getBuildings().size(); i++) {
+            getBuildings().get(i).toString();
         }
         return s;
+    }
+
+    /**
+     * @return the buildings
+     */
+    public List<Building> getBuildings() {
+        return buildings;
     }
 
 }
