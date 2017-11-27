@@ -5,13 +5,14 @@
  */
 package business;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  *
  * @author Kim Christensen
  */
-public class Building {
+public class Building implements Serializable{
 
     //The attributes a building should have
     private ArrayList<Sensor> sensors;

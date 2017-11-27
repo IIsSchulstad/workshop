@@ -71,6 +71,8 @@ public class FXMLController implements Initializable {
         sensorTypeObservableList.add("TempSensor");
         sensorTypeObservableList.add("CO2Sensor");
         this.comboBoxSensorList.setItems(sensorTypeObservableList);
+        facade.loadBuildings();
+        updateListViews();
 
     }
 
@@ -127,5 +129,10 @@ public class FXMLController implements Initializable {
     private void checkSelectedSensors(MouseEvent event) {
         selectedSensor = listSensors.getSelectionModel().getSelectedItem();
         updateListViews();
+    }
+
+    @FXML
+    private void saveCurrentState(ActionEvent event) {
+        facade.saveBuildings();
     }
 }

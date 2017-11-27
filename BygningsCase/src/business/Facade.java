@@ -5,6 +5,13 @@
  */
 package business;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -43,4 +50,35 @@ public class Facade {
         return buildings;
     }
 
+    
+    // https://www.mkyong.com/java/how-to-read-and-write-java-object-to-a-file/
+    public void saveBuildings() {
+        try {
+            FileOutputStream f = new FileOutputStream(new File("saveBuildings.txt"));
+            ObjectOutputStream o = new ObjectOutputStream(f);
+
+            for (Building building : buildings) {
+                o.writeObject(building);
+            }
+
+            o.close();
+            f.close();
+        } catch (FileNotFoundException e) {
+            System.out.println("You did something wrong!");
+        } catch (IOException e) {
+            System.out.println("You did something else wrong!");
+        }
+    }
+
+    public boolean loadBuildings() {
+        try {
+            FileInputStream fi = new FileInputStream(new File("saveBuildings.txt"));
+            ObjectInputStream oi = new ObjectInputStream(fi);
+
+            buildings.add((Building) oi.readObject());
+
+        } catch (Exception e) {
+        }
+        return false;
+    }
 }

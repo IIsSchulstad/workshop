@@ -7,7 +7,7 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" prefHeight="502.0" prefWidth="613.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presenration.FXMLController">
+<AnchorPane id="AnchorPane" prefHeight="502.0" prefWidth="613.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presenration.FXMLController">
    <children>
       <AnchorPane layoutX="48.0" layoutY="193.0" prefHeight="114.0" prefWidth="200.0">
          <children>
@@ -33,5 +33,6 @@
             <Button layoutX="35.0" layoutY="84.0" mnemonicParsing="false" onAction="#addMeasurementButton" text="Add Measurement" />
          </children>
       </AnchorPane>
+      <Button layoutX="277.0" layoutY="431.0" mnemonicParsing="false" onAction="#saveCurrentState" text="Save" />
    </children>
 </AnchorPane>
