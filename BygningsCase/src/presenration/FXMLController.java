@@ -92,6 +92,8 @@ public class FXMLController implements Initializable {
 
     @FXML
     private void addMeasurementButton(ActionEvent event) {
+        selectedSensor.addMeasurement(new Measurement(Double.parseDouble(sensorValue.getText())));
+        updateListViews();
     }
 
     @FXML
@@ -107,10 +109,16 @@ public class FXMLController implements Initializable {
             if (selectedBuilding != null && !selectedBuilding.getSensors().isEmpty()) {
                 this.sensorObservableList = FXCollections.observableArrayList(selectedBuilding.getSensors());
                 listSensors.setItems(sensorObservableList);
-                if (!selectedSensor.getLog().isEmpty()) {
+                if (selectedSensor!= null && !selectedSensor.getLog().isEmpty()) {
                     this.measurementObservableList = FXCollections.observableArrayList(selectedSensor.getLog());
                     listMeasurements.setItems(measurementObservableList);
                 }
+                else{
+                    listMeasurements.setItems(null);
+                }
+            }
+            else{
+                listSensors.setItems(null);
             }
         }
     }
